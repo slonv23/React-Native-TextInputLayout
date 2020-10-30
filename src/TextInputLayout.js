@@ -96,7 +96,10 @@ export default class TextInputLayout extends Component {
             underlineColorAndroid: 'transparent'
         });
 
-        let {height, fontSize}= this._oriEdtStyle;
+        let {height, fontSize, minHeight}= this._oriEdtStyle;
+        if (!height) {
+            height = minHeight;
+        }
         let labelHeight = fontSize + 3;
 
         let labelTransY = this.state.labelAnimationValue.interpolate({
